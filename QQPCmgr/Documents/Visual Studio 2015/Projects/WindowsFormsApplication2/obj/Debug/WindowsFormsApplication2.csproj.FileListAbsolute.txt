@@ -23,3 +23,15 @@ D:\softwaredesigningfiles\C#\QQPCmgr\Documents\Visual Studio 2015\Projects\Windo
 D:\softwaredesigningfiles\C#\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 D:\softwaredesigningfiles\C#\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
 D:\softwaredesigningfiles\C#\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Setupwebsite.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.MainForm.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Detectupdate.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Setupwebsite.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Updating.resources
+C:\Users\hhhj\Source\Repos\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
