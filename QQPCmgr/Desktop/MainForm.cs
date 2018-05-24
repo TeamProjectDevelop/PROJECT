@@ -12,6 +12,7 @@ namespace WindowsFormsApplication2
 {
     public partial class MainForm : Form
     {
+        public string url = "";
         public MainForm()
         {
             InitializeComponent();
@@ -193,8 +194,17 @@ namespace WindowsFormsApplication2
 
         private void 检测更新ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Detectupdate detectupdate = new Detectupdate();
-            detectupdate.Show();
+            
+            if (this.url == "" )
+            {
+                MessageBox.Show("更新路径还没有设置，请先设置更新路径");
+                return ;
+            }
+            else
+            {
+                Detectupdate detectupdate = new Detectupdate(this.url);
+                detectupdate.Show();
+            }
         }
 
         private void fontDialog3_Apply(object sender, EventArgs e)
@@ -210,7 +220,13 @@ namespace WindowsFormsApplication2
         private void 设置网址ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Setupwebsite setupwebsite = new Setupwebsite();
+            setupwebsite.setupwb += new SetUpwb(setupwebsite_setupwb);
             setupwebsite.ShowDialog();
+        }
+
+        void setupwebsite_setupwb(string url)
+        {
+            this.url = url;
         }
 
         private void label1_Click(object sender, EventArgs e)

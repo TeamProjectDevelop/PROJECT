@@ -39,8 +39,8 @@
             this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置网址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.检测更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.生成版本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.versionNum = new System.Windows.Forms.TextBox();
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -58,7 +58,7 @@
             this.工具ToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1444, 28);
+            this.menu.Size = new System.Drawing.Size(1261, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -78,33 +78,33 @@
             // create
             // 
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(181, 26);
+            this.create.Size = new System.Drawing.Size(129, 26);
             this.create.Text = "新建";
             // 
             // 打开ToolStripMenuItem
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.保存ToolStripMenuItem.Text = "保存";
             // 
             // 打开ToolStripMenuItem1
             // 
             this.打开ToolStripMenuItem1.Name = "打开ToolStripMenuItem1";
-            this.打开ToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.打开ToolStripMenuItem1.Size = new System.Drawing.Size(129, 26);
             this.打开ToolStripMenuItem1.Text = "另存为";
             this.打开ToolStripMenuItem1.Click += new System.EventHandler(this.打开ToolStripMenuItem1_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.退出ToolStripMenuItem.Text = "退出";
             // 
             // 工具ToolStripMenuItem
@@ -121,28 +121,39 @@
             // 设置网址ToolStripMenuItem
             // 
             this.设置网址ToolStripMenuItem.Name = "设置网址ToolStripMenuItem";
-            this.设置网址ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.设置网址ToolStripMenuItem.Text = "设置网址";
+            this.设置网址ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.设置网址ToolStripMenuItem.Text = "设置路径";
             this.设置网址ToolStripMenuItem.Click += new System.EventHandler(this.设置网址ToolStripMenuItem_Click);
             // 
             // 检测更新ToolStripMenuItem
             // 
             this.检测更新ToolStripMenuItem.Name = "检测更新ToolStripMenuItem";
-            this.检测更新ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.检测更新ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.检测更新ToolStripMenuItem.Text = "检测更新";
             this.检测更新ToolStripMenuItem.Click += new System.EventHandler(this.检测更新ToolStripMenuItem_Click);
             // 
+            // 生成版本ToolStripMenuItem
+            // 
+            this.生成版本ToolStripMenuItem.Name = "生成版本ToolStripMenuItem";
+            this.生成版本ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.生成版本ToolStripMenuItem.Text = "生成版本";
+            this.生成版本ToolStripMenuItem.Click += new System.EventHandler(this.生成版本ToolStripMenuItem_Click);
+            // 
             // dgv
             // 
-            this.dgv.AllowDrop = true;
             this.dgv.AllowUserToOrderColumns = true;
             this.dgv.AllowUserToResizeColumns = false;
             this.dgv.AllowUserToResizeRows = false;
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(200, 118);
+            this.dgv.Location = new System.Drawing.Point(131, 118);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 27;
-            this.dgv.Size = new System.Drawing.Size(991, 251);
+            this.dgv.Size = new System.Drawing.Size(1015, 352);
             this.dgv.TabIndex = 2;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
@@ -153,18 +164,11 @@
             this.dgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_RowPostPaint);
             this.dgv.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgv_Scroll);
             // 
-            // 生成版本ToolStripMenuItem
-            // 
-            this.生成版本ToolStripMenuItem.Name = "生成版本ToolStripMenuItem";
-            this.生成版本ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.生成版本ToolStripMenuItem.Text = "生成版本";
-            this.生成版本ToolStripMenuItem.Click += new System.EventHandler(this.生成版本ToolStripMenuItem_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 13.8F);
-            this.label1.Location = new System.Drawing.Point(196, 81);
+            this.label1.Location = new System.Drawing.Point(127, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.TabIndex = 3;
@@ -174,7 +178,7 @@
             // versionNum
             // 
             this.versionNum.Font = new System.Drawing.Font("宋体", 13.8F);
-            this.versionNum.Location = new System.Drawing.Point(296, 78);
+            this.versionNum.Location = new System.Drawing.Point(245, 78);
             this.versionNum.Name = "versionNum";
             this.versionNum.Size = new System.Drawing.Size(187, 34);
             this.versionNum.TabIndex = 4;
@@ -199,13 +203,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 501);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1261, 556);
             this.Controls.Add(this.versionNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menu.ResumeLayout(false);

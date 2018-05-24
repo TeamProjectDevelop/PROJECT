@@ -99,6 +99,7 @@
             this.Name = "Updating";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Updating";
+            this.Load += new System.EventHandler(this.Updating_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

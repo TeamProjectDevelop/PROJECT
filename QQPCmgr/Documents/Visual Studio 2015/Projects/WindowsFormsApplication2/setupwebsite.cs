@@ -8,11 +8,15 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WindowsFormsApplication2
 {
     public partial class Setupwebsite : Form
     {
+        public event SetUpwb setupwb;
+
         public Setupwebsite()
         {
             InitializeComponent();
@@ -20,29 +24,19 @@ namespace WindowsFormsApplication2
 
         public static int GetPage(String url)
         {
-            try
+            Regex regex = new Regex(@"^(file:\\\\[a-zA-Z]:\\)?[^\/\:\*\?\""\<\>\|\,]*$");
+            Match m = regex.Match(url);
+            if (!m.Success)
             {
-                // Creates an HttpWebRequest for the specified URL.
-                HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-                // 有些网站会阻止程序访问，需要加入下面这句
-                myHttpWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
-                myHttpWebRequest.Method = "GET";
-                // Sends the HttpWebRequest and waits for a response.
-                HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-                if (myHttpWebResponse.StatusCode == HttpStatusCode.OK)
-                    return 1;
-                // Releases the resources of the response.
-                myHttpWebResponse.Close();
+                return 0 ;
+            }
+            if(Directory.Exists(url.Remove(0,7)))
+            {
                 return 1;
             }
-            catch (WebException e)
+            else
             {
-                Console.WriteLine("\r\nWebException Raised. The following error occured : {0}", e.Status);
-                return 0;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("\nThe following Exception was raised : {0}", e.Message);
+                MessageBox.Show("文件夹不存在,请重新输入！");
                 return 0;
             }
         }
@@ -59,17 +53,19 @@ namespace WindowsFormsApplication2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (GetPage(this.textBox1.Text) == 0)
+            string url = this.textBox1.Text;
+            if (GetPage(url) == 0)
             {
-                this.label2.Visible = true;
                 this.label3.Visible = false;
+                this.label2.Visible = true;
             }
             else
             {
-                this.label3.Visible = true;
                 this.label2.Visible = false;
+                this.label3.Visible = true;
                 this.label4.Visible = true;
                 this.timer2.Enabled = true;
+                setupwb(url);
             }
 
         }
@@ -106,4 +102,6 @@ namespace WindowsFormsApplication2
 
         }
     }
+
+    public delegate void SetUpwb(string url);
 }
