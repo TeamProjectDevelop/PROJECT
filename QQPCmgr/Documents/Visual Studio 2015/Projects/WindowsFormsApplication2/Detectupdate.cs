@@ -35,6 +35,7 @@ namespace WindowsFormsApplication2
             }
         }
 
+<<<<<<< HEAD
         public static string LocalUrl = System.Environment.CurrentDirectory;
         //存放原来文件的文件夹，在这里为：D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug
 
@@ -73,6 +74,23 @@ namespace WindowsFormsApplication2
 
         
 
+=======
+        public static string LocalUrl = System.Environment.CurrentDirectory.Replace("Debug", "Release");
+        //存放原来文件的文件夹，在这里为：D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Release
+
+        private bool GetUpdate()
+        {
+            if(FileSize(LocalUrl)==FileSize(this.url))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+>>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
         public static long FileSize(string filePath)
         {
             long temp = 0;

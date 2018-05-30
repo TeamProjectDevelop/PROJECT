@@ -65,6 +65,7 @@ namespace WindowsFormsApplication2
                 this.label3.Visible = true;
                 this.label4.Visible = true;
                 this.timer2.Enabled = true;
+<<<<<<< HEAD
                 FileStream fs = new FileStream(Application.StartupPath + "\\" + "WebSite.txt", FileMode.Create);
                 StreamWriter sw = new StreamWriter(fs);
                 //开始写入
@@ -73,6 +74,8 @@ namespace WindowsFormsApplication2
                 //关闭流
                 sw.Close();
                 fs.Close();
+=======
+>>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
                 setupwb(url);
             }
 

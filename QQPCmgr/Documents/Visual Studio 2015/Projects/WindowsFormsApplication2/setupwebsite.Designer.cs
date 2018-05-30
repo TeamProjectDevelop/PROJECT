@@ -43,10 +43,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Font = new System.Drawing.Font("宋体", 13.8F);
             this.label1.Location = new System.Drawing.Point(188, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 24);
+=======
+            this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(184, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 25);
+>>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.label1.TabIndex = 0;
             this.label1.Text = "请在下面输入框输入路径：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

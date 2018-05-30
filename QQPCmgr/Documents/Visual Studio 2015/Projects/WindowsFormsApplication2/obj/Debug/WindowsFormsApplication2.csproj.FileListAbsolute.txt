@@ -48,6 +48,7 @@ D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projec
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.CoreCompileInputs.cache
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+<<<<<<< HEAD
 D:\QQPCmgr\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
 D:\QQPCmgr\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 D:\QQPCmgr\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
@@ -73,3 +74,5 @@ C:\Users\URHANUS\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\W
 C:\Users\URHANUS\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.CoreCompileInputs.cache
 C:\Users\URHANUS\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 C:\Users\URHANUS\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+=======
+>>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
