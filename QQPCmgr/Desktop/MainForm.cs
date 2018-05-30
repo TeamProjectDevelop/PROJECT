@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml;
 
 namespace WindowsFormsApplication2
 {
     public partial class MainForm : Form
     {
+        public string url = "";
         public MainForm()
         {
             InitializeComponent();
+            StreamReader sr = new StreamReader(Application.StartupPath + "\\" + "WebSite.txt", Encoding.Default);
+            String line = sr.ReadLine();
+            this.url = line;
+            sr.Close();
         }
 
         private ComboBox cmb_Temp = new ComboBox();
@@ -127,7 +134,7 @@ namespace WindowsFormsApplication2
             this.dgv.Controls.Add(cmb_Temp);
 
             this.Text = "自动更新软件";
-            dgv.Font = new Font("微软雅黑", 12);
+            dgv.Font = new Font("宋体", 14);
             dgv.Columns[1].MinimumWidth = 300;
             dgv.Columns[0].Width = 130;
         }
@@ -193,8 +200,17 @@ namespace WindowsFormsApplication2
 
         private void 检测更新ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Detectupdate detectupdate = new Detectupdate();
-            detectupdate.Show();
+            
+            if (this.url == "" )
+            {
+                MessageBox.Show("更新路径还没有设置，请先设置更新路径");
+                return ;
+            }
+            else
+            {
+                Detectupdate detectupdate = new Detectupdate(this.url);
+                detectupdate.Show();
+            }
         }
 
         private void fontDialog3_Apply(object sender, EventArgs e)
@@ -210,7 +226,13 @@ namespace WindowsFormsApplication2
         private void 设置网址ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Setupwebsite setupwebsite = new Setupwebsite();
+            setupwebsite.setupwb += new SetUpwb(setupwebsite_setupwb);
             setupwebsite.ShowDialog();
+        }
+
+        void setupwebsite_setupwb(string url)
+        {
+            this.url = url;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -338,9 +360,9 @@ namespace WindowsFormsApplication2
         private void dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
-       e.RowBounds.Location.Y,
-       dgv.RowHeadersWidth - 4,
-       e.RowBounds.Height);
+            e.RowBounds.Location.Y,
+            dgv.RowHeadersWidth - 4,
+            e.RowBounds.Height);
             TextRenderer.DrawText(e.Graphics,
                   (e.RowIndex + 1).ToString(),
                    dgv.RowHeadersDefaultCellStyle.Font,
@@ -351,28 +373,7 @@ namespace WindowsFormsApplication2
 
         private void create_Click(object sender, EventArgs e)
         {
-            MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
-
-            //"确定要退出吗？"是对话框的显示信息，"退出系统"是对话框的标题
-
-            //默认情况下，如MessageBox.Show("确定要退出吗？")只显示一个“确定”按钮。
-            DialogResult dr = MessageBox.Show("是否保存配置信息到update.config?", "保存", messButton);
-
-            if (dr == DialogResult.OK)//如果点击“确定”按钮
-
-            {
-
-                dtData.Clear();
-                dgv.DataSource = dtData;
-            }
-
-            else//如果点击“取消”按钮
-
-            {
-
-
-
-            }
+            
         }
 
         private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -381,8 +382,35 @@ namespace WindowsFormsApplication2
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                dtData.Clear();
-                BindData();
+                try
+                {
+                    String routeBuf = fileDialog.FileName;
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load(routeBuf);
+                    XmlNode root = xmlDoc.DocumentElement;
+
+                    dtData.Clear();
+                    DataRow drData;
+                    int i;
+                    i = 0;
+                    //BindData();
+                    foreach (XmlNode xmlNode in root.ChildNodes)
+                    {
+                        i = 0;
+                        drData = dtData.NewRow();
+                        foreach (XmlNode xmlElement in xmlNode.ChildNodes)
+                        {
+                            drData[i]=xmlElement.InnerText;
+                            i++;
+                        }
+                        dtData.Rows.Add(drData);
+                    }
+                    dgv.DataSource = dtData;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -429,6 +457,11 @@ namespace WindowsFormsApplication2
 
         private void 打开ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void 生成版本ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (String.IsNullOrEmpty(versionNum.Text.ToString()) || (versionNum.Text.ToString())[0] < 48 || (versionNum.Text.ToString()[0]) > 59)
             {
                 MessageBox.Show("请输入正确的版本号");
@@ -439,24 +472,103 @@ namespace WindowsFormsApplication2
             }
             else
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = @"配置文件|*.config";
-                if (sfd.ShowDialog() == DialogResult.OK)
+                FolderBrowserDialog fDialog = new FolderBrowserDialog();
+                fDialog.Description = "请选择版本保存路径";
+              
+                if (fDialog.ShowDialog() == DialogResult.OK)
                 {
-                    String filename = sfd.FileName;
-                    System.IO.StreamWriter sw = new System.IO.StreamWriter(filename);//开启流通道
-                    sw.Close();//关闭流通道
+                    string destPath = fDialog.SelectedPath;
+
+                    if (File.Exists(destPath+@"\files.xml"))
+                    {
+                        File.Create(destPath + @"\files.xml");
+                    }
+                    try
+                    {
+                        XmlDocument xmlDoc = new XmlDocument();
+                        XmlNode root = xmlDoc.CreateNode(XmlNodeType.Element, "Books", null);
+                        XmlAttribute xmlAttri = xmlDoc.CreateAttribute("versionNum");
+                        xmlAttri.InnerText = versionNum.Text.ToString();
+                        root.Attributes.Append(xmlAttri);
+                        xmlDoc.AppendChild(root);
+                       for (int i = 0; i < this.dgv.RowCount-1; i++)
+                        {
+                            XmlNode xmlElement = xmlDoc.CreateNode(XmlNodeType.Element, "file", null);
+                            XmlAttribute xmlAttribute = xmlDoc.CreateAttribute("id");
+                            xmlAttribute.InnerText = i+1.ToString();
+                            xmlElement.Attributes.Append(xmlAttribute);
+                            XmlNode xmlItemName = xmlDoc.CreateNode(XmlNodeType.Element, "name", null);
+                            xmlItemName.InnerText = dgv.Rows[i].Cells[0].Value.ToString();
+                            XmlNode xmlItemRoute = xmlDoc.CreateNode(XmlNodeType.Element, "route", null);
+                            xmlItemRoute.InnerText = dgv.Rows[i].Cells[1].Value.ToString();
+                            XmlNode xmlItemStyle = xmlDoc.CreateNode(XmlNodeType.Element, "upStyle", null);
+                            xmlItemStyle.InnerText = dgv.Rows[i].Cells[2].Value.ToString();
+                            XmlNode xmlItemSize = xmlDoc.CreateNode(XmlNodeType.Element, "size", null);
+                            xmlItemSize.InnerText = dgv.Rows[i].Cells[3].Value.ToString();
+
+                            root.AppendChild(xmlElement);
+                            xmlElement.AppendChild(xmlItemName);
+                            xmlElement.AppendChild(xmlItemRoute);
+                            xmlElement.AppendChild(xmlItemStyle);
+                            xmlElement.AppendChild(xmlItemSize);
+                        }
+
+                        XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", null);
+                        xmlDoc.InsertBefore(declaration, xmlDoc.DocumentElement);
+                        xmlDoc.Save(destPath + @"\files.xml");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
+
+                    for (int i = 0; i < dtData.Rows.Count; i++)
+                    {
+                        string filepath = dtData.Rows[i]["文件路径"].ToString();
+                        if (filepath != "")
+                        {
+                            string filename = filepath.Substring(filepath.LastIndexOf("\\"));
+                            System.IO.File.Copy(filepath, destPath + filename,true);
+                        }
+                    }
+                    MessageBox.Show("已生成新版本");
                 }
             }
         }
 
-        private void 生成版本ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            if (sfd.ShowDialog() == DialogResult.OK)
+            
+        }
+
+        private void create_Click_1(object sender, EventArgs e)
+        {
+            MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
+
+            //默认情况下，如MessageBox.Show("确定要退出吗？")只显示一个“确定”按钮。
+            DialogResult dr = MessageBox.Show("是否保存files.xml已修改内容?", "保存", messButton);
+
+            if (dr == DialogResult.OK)//如果点击“确定”按钮
+
             {
-                MessageBox.Show("已生成新版本");
+
+                dtData.Clear();
+                dgv.DataSource = dtData;
             }
+
+            else//如果点击“取消”按钮
+
+            {
+
+
+
+            }
+        }
+
+        private void versionNum_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

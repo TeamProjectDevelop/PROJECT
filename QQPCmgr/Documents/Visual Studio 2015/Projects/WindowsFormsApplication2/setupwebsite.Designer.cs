@@ -43,12 +43,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("楷体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(164, 91);
+            this.label1.Font = new System.Drawing.Font("宋体", 13.8F);
+            this.label1.Location = new System.Drawing.Point(188, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 28);
+            this.label1.Size = new System.Drawing.Size(298, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "请在下面输入框输入网址：";
+            this.label1.Text = "请在下面输入框输入路径：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
@@ -61,6 +61,7 @@
             // button1
             // 
             this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Location = new System.Drawing.Point(169, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 30);
@@ -82,13 +83,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(274, 189);
+            this.label2.Location = new System.Drawing.Point(279, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 15);
+            this.label2.Size = new System.Drawing.Size(112, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "输入错误的网址";
+            this.label2.Text = "输入错误的路径";
             this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -100,13 +101,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(282, 190);
+            this.label3.Location = new System.Drawing.Point(287, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 15);
+            this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "当前网址可用";
+            this.label3.Text = "当前路径可用";
             this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -122,7 +123,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 15);
             this.label4.TabIndex = 7;
-            this.label4.Text = "连接成功，即将退出";
+            this.label4.Text = "设置成功，即将退出";
             this.label4.Visible = false;
             // 
             // Setupwebsite
@@ -139,7 +140,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Setupwebsite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Set up Website";
+            this.Text = "Set Up Route";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

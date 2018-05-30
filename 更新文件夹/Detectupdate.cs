@@ -36,7 +36,7 @@ namespace WindowsFormsApplication2
         }
 
         public static string LocalUrl = System.Environment.CurrentDirectory;
-        //存放原来文件的文件夹，在这里为：D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug
+        //存放原来文件的文件夹，在这里为：D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Release
 
         private bool GetUpdate()
         {
