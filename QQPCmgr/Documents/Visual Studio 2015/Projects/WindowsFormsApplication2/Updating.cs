@@ -8,57 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-<<<<<<< HEAD
 using System.Xml;
 using System.Diagnostics;
-=======
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
 
 namespace WindowsFormsApplication2
 {
     public partial class Updating : Form
     {
-<<<<<<< HEAD
         public Updating(string OnlinePath,string Localurl)
         {
             InitializeComponent();
             this.Localurl = Localurl;
             this.Onlineurl = OnlinePath;
             Readxml(OnlinePath, Localurl);
-=======
-        public Updating(string sorcePath,string savePath)
-        {
-            InitializeComponent();
-            DelectDir(savePath);
-            CopyDirectory(sorcePath, savePath);
-        }
-
-        public string url = "";
-
-        public static void DelectDir(string srcPath)
-        {
-            try
-            {
-                DirectoryInfo dir = new DirectoryInfo(srcPath);
-                FileSystemInfo[] fileinfo = dir.GetFileSystemInfos();  //返回目录中所有文件和子目录
-                foreach (FileSystemInfo i in fileinfo)
-                {
-                    if (i is DirectoryInfo)            //判断是否文件夹
-                    {
-                        DirectoryInfo subdir = new DirectoryInfo(i.FullName);
-                        subdir.Delete(true);          //删除子目录和文件
-                    }
-                    else
-                    {
-                        File.Delete(i.FullName);      //删除指定文件
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
         }
 
         public string Onlineurl = "";
@@ -74,7 +36,6 @@ namespace WindowsFormsApplication2
 
         }
 
-<<<<<<< HEAD
         public void Readxml(string OnlineDirPath, string LocalDirPath)
         {
             try
@@ -104,34 +65,10 @@ namespace WindowsFormsApplication2
                     this.progressBar1.Visible = false;
                     this.button1.Enabled = true;
                     this.timer2.Enabled = false;
-=======
-        public void CopyDirectory(string sourceDirPath, string saveDirPath)
-        {
-            try
-            {
-                if (!Directory.Exists(saveDirPath))
-                {
-                    Directory.CreateDirectory(saveDirPath);
-                }
-                string[] files = Directory.GetFiles(sourceDirPath);
-                foreach (string file in files)
-                {
-                    string pFilePath = saveDirPath + "\\" + Path.GetFileName(file);
-                    if (File.Exists(pFilePath))
-                        continue;
-                    File.Copy(file, pFilePath, true);
-                }
-
-                string[] dirs = Directory.GetDirectories(sourceDirPath);
-                foreach (string dir in dirs)
-                {
-                    CopyDirectory(dir, saveDirPath + "\\" + Path.GetFileName(dir));
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
                 }
             }
             catch (Exception ex)
             {
-<<<<<<< HEAD
                 Console.WriteLine(ex.Message);
             }
         }
@@ -160,9 +97,6 @@ namespace WindowsFormsApplication2
             else if(fileupstyle=="执行")
             {
                 ReStartCoverage.Add(filename, fileupstyle);
-=======
-
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             }
         }
 
@@ -227,13 +161,10 @@ namespace WindowsFormsApplication2
         {
 
         }
-<<<<<<< HEAD
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-=======
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
     }
 }

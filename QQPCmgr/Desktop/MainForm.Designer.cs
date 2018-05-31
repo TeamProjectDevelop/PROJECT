@@ -56,11 +56,7 @@
             this.工具ToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-<<<<<<< HEAD
             this.menu.Size = new System.Drawing.Size(1261, 24);
-=======
-            this.menu.Size = new System.Drawing.Size(1261, 28);
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -79,19 +75,13 @@
             // create
             // 
             this.create.Name = "create";
-<<<<<<< HEAD
             this.create.Size = new System.Drawing.Size(170, 26);
             this.create.Text = "新建版本";
             this.create.Click += new System.EventHandler(this.create_Click_1);
-=======
-            this.create.Size = new System.Drawing.Size(129, 26);
-            this.create.Text = "新建";
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             // 
             // 打开ToolStripMenuItem
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-<<<<<<< HEAD
             this.打开ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.打开ToolStripMenuItem.Text = "打开配置文件";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
@@ -100,29 +90,6 @@
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-=======
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
-            this.打开ToolStripMenuItem.Text = "打开";
-            this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
-            // 
-            // 保存ToolStripMenuItem
-            // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
-            this.保存ToolStripMenuItem.Text = "保存";
-            // 
-            // 打开ToolStripMenuItem1
-            // 
-            this.打开ToolStripMenuItem1.Name = "打开ToolStripMenuItem1";
-            this.打开ToolStripMenuItem1.Size = new System.Drawing.Size(129, 26);
-            this.打开ToolStripMenuItem1.Text = "另存为";
-            this.打开ToolStripMenuItem1.Click += new System.EventHandler(this.打开ToolStripMenuItem1_Click);
-            // 
-            // 退出ToolStripMenuItem
-            // 
-            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.退出ToolStripMenuItem.Text = "退出";
             // 
             // 工具ToolStripMenuItem
@@ -140,51 +107,31 @@
             // 设置网址ToolStripMenuItem
             // 
             this.设置网址ToolStripMenuItem.Name = "设置网址ToolStripMenuItem";
-<<<<<<< HEAD
             this.设置网址ToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-=======
-            this.设置网址ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.设置网址ToolStripMenuItem.Text = "设置路径";
             this.设置网址ToolStripMenuItem.Click += new System.EventHandler(this.设置网址ToolStripMenuItem_Click);
             // 
             // 检测更新ToolStripMenuItem
             // 
             this.检测更新ToolStripMenuItem.Name = "检测更新ToolStripMenuItem";
-<<<<<<< HEAD
             this.检测更新ToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-=======
-            this.检测更新ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.检测更新ToolStripMenuItem.Text = "检测更新";
             this.检测更新ToolStripMenuItem.Click += new System.EventHandler(this.检测更新ToolStripMenuItem_Click);
             // 
             // 生成版本ToolStripMenuItem
             // 
             this.生成版本ToolStripMenuItem.Name = "生成版本ToolStripMenuItem";
-<<<<<<< HEAD
             this.生成版本ToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-=======
-            this.生成版本ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.生成版本ToolStripMenuItem.Text = "生成版本";
             this.生成版本ToolStripMenuItem.Click += new System.EventHandler(this.生成版本ToolStripMenuItem_Click);
             // 
             // dgv
             // 
             this.dgv.AllowUserToOrderColumns = true;
-<<<<<<< HEAD
             this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-=======
-            this.dgv.AllowUserToResizeColumns = false;
-            this.dgv.AllowUserToResizeRows = false;
-            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -240,13 +187,8 @@
             // 
             // MainForm
             // 
-<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-=======
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
->>>>>>> 344d7fc34cf825dfab57f5e18b7d5832cec320db
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1261, 556);
             this.Controls.Add(this.versionNum);
