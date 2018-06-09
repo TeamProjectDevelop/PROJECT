@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Books versionNum="1.0">
+<Books versionNum="3.0">
   <file id="01">
     <name>Detectupdate.cs</name>
     <route>D:\softwaredesigningfiles\C#\PROJECT\更新文件夹\Detectupdate.cs</route>
@@ -7,10 +7,10 @@
     <size>5KB</size>
   </file>
   <file id="11">
-    <name>新建文本文档.txt</name>
-    <route>D:\softwaredesigningfiles\C#\PROJECT\更新文件夹\新建文本文档.txt</route>
+    <name>Detectupdate.cs</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\更新文件夹\Detectupdate.cs</route>
     <upStyle>新增</upStyle>
-    <size>1KB</size>
+    <size>5KB</size>
   </file>
   <file id="21">
     <name>WindowsFormsApplication2.exe</name>
