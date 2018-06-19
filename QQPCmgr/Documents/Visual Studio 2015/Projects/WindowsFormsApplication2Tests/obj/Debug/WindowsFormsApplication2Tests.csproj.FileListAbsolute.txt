@@ -1,0 +1,12 @@
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\WindowsFormsApplication2Tests.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\WindowsFormsApplication2Tests.pdb
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\WindowsFormsApplication2.exe
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\WindowsFormsApplication2.pdb
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\WindowsFormsApplication2.exe.config
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.csprojResolveAssemblyReference.cache
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.csproj.CoreCompileInputs.cache
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.csproj.CopyComplete
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.pdb

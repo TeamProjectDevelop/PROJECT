@@ -15,13 +15,16 @@ namespace WindowsFormsApplication2
 {
     public partial class Updating : Form
     {
-        public Updating(string OnlinePath,string Localurl)
+        public Updating(string OnlinePath,string Localurl,string filename)
         {
             InitializeComponent();
             this.Localurl = Localurl;
             this.Onlineurl = OnlinePath;
-            Readxml(OnlinePath, Localurl);
+            this.filename = filename;
+            UPDATE();
         }
+
+        public string filename = "";
 
         public string Onlineurl = "";
 
@@ -31,73 +34,22 @@ namespace WindowsFormsApplication2
 
         private Dictionary<string, string> ReStartCoverage = new Dictionary<string, string>();
 
+        private bool restart;
+
+        private AutoUpdate.Update Up = new AutoUpdate.Update();
+
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
 
-        public void Readxml(string OnlineDirPath, string LocalDirPath)
+        private void UPDATE()
         {
-            try
-            {
-                String routeBuf = OnlineDirPath + "\\files.xml";
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(@routeBuf);
-                XmlNode root = xmlDoc.SelectSingleNode("Books");
-
-                XmlNodeList xnl = root.ChildNodes;
-
-                foreach (XmlNode xn1 in xnl)
-                {
-                    XmlElement xe = (XmlElement)xn1;
-                    XmlNodeList xnl0 = xe.ChildNodes;
-                    string filename = xnl0.Item(0).InnerText;
-                    string filepath = xnl0.Item(1).InnerText;
-                    string fileupstyle = xnl0.Item(2).InnerText;
-                    UpdateFile(filename,filepath,fileupstyle,OnlineDirPath,LocalDirPath);
-                }
-                File.Copy(routeBuf, LocalDirPath + "\\files.xml", true);
-                if (upcount==0)
-                {
-                    this.label1.Visible = false;
-                    this.label2.Visible = true;
-                    this.button1.Text = "确定";
-                    this.progressBar1.Visible = false;
-                    this.button1.Enabled = true;
-                    this.timer2.Enabled = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        private void UpdateFile(string filename,string filepath,string fileupstyle,string OnlinePath,string LocalDirPath)
-        {
-            if(fileupstyle=="新增")
-            {
-                File.Copy(Path.Combine(OnlinePath,filename),Path.Combine(LocalDirPath,filename));
-                upcount++;
-            }
-            else if(fileupstyle=="替换")
-            {
-                File.Copy(Path.Combine(OnlinePath, filename), Path.Combine(LocalDirPath, filename),true);
-                upcount++;
-            }
-            else if(fileupstyle=="删除")
-            {
-                File.Delete(Path.Combine(LocalDirPath, filename));
-                upcount++;
-            }
-            else if(fileupstyle=="重启覆盖")
-            {
-                ReStartCoverage.Add(filename, fileupstyle);
-            }
-            else if(fileupstyle=="执行")
-            {
-                ReStartCoverage.Add(filename, fileupstyle);
-            }
+            this.Up.SetLocalUrl(this.Localurl);
+            this.Up.SetOnlineUrl(this.Onlineurl);
+            this.Up.SetUpdateFileName("files.xml");
+            this.Up.SetUpdateExeName("更新后软件.exe");
+            this.restart = Up.Readxml();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -115,16 +67,11 @@ namespace WindowsFormsApplication2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ReStartCoverage.Count!=0)
+            if(this.restart==true)
             {
                 try
                 {
-                    ProcessStartInfo startInfo = new ProcessStartInfo();
-                    string upexepath = this.Localurl + "\\ReStartUpdate.exe";
-                    startInfo.FileName = upexepath;
-                    startInfo.Arguments = this.Onlineurl;
-                    startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                    Process.Start(startInfo);
+                    Up.RestartUpdate();
                 }
                 catch(Exception ex)
                 {
@@ -143,7 +90,7 @@ namespace WindowsFormsApplication2
         {
             if(this.progressBar1.Value==this.progressBar1.Maximum)
             {
-                if(ReStartCoverage.Count!=0)
+                if(this.restart==true)
                 {
                     this.label1.Visible = false;
                     this.label2.Visible = true;

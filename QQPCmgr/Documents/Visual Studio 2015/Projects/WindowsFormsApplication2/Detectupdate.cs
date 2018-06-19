@@ -21,78 +21,41 @@ namespace WindowsFormsApplication2
         public Detectupdate(string url)
         {
             InitializeComponent();
-            this.url = url.Replace("file:\\\\","");
-            this.url = this.url.Replace("\\\\","\\");
-            if(GetUpdate() == true)
-            {
-                this.button2.Enabled = true;
-            }
-            else
-            {
-                this.button2.Enabled = false;
-                this.timer1.Enabled = true;
-                this.label1.Text = "未检测到更新，即将自动退出";
-            }
+            this.url = url.Replace("file:\\\\", "");
+            checkupdate();
         }
 
         public static string LocalUrl = System.Environment.CurrentDirectory;
         //存放原来文件的文件夹，在这里为：D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug
 
-        private bool GetUpdate()
+        private void checkupdate()
         {
-            string Thisurl = this.url;
-            string Localxml = @LocalUrl+"\\files.xml";
-            string Updatexml = @Thisurl+"\\files.xml";
-            string Localxmlpath = LocalUrl + "\\files.xml";
-            string Updatexmlpath = Thisurl + "\\files.xml";
-
-            if (System.IO.File.Exists(Localxmlpath) &&System.IO.File.Exists(Updatexmlpath))
+            AutoUpdate.Detect Det = new AutoUpdate.Detect();
+            Det.getOnlineXml(this.url);
+            Det.getLocalXml(LocalUrl);
+            Det.getXmlName("files.xml");
+            int Result = Det.GetUpdate();
+            if (Result == 2)
             {
-                //计算第一个文件的哈希值
-                var hash = System.Security.Cryptography.HashAlgorithm.Create();
-                var stream_1 = new System.IO.FileStream(Localxml, System.IO.FileMode.Open);
-                byte[] hashByte_1 = hash.ComputeHash(stream_1);
-                stream_1.Close();
-                //计算第二个文件的哈希值
-                var stream_2 = new System.IO.FileStream(Updatexml, System.IO.FileMode.Open);
-                byte[] hashByte_2 = hash.ComputeHash(stream_2);
-                stream_2.Close();
-
-                //比较两个哈希值
-                if (BitConverter.ToString(hashByte_1) == BitConverter.ToString(hashByte_2))
-                    return false;
-                else
-                    return true;
+                this.button2.Enabled = true;
+                this.label1.Visible = true;
+                this.label2.Visible = false;
+            }
+            else if (Result == 1)
+            {
+                this.button2.Enabled = false;
+                this.timer1.Enabled = true;
+                this.label2.Visible = false;
+                this.label1.Visible = true;
+                this.label1.Text = "未检测到更新，即将自动退出";
             }
             else
             {
-                MessageBox.Show("警告！本地或网络上没有配置文件！");
-                return false;
+                this.timer1.Enabled = true;
+                this.label2.Visible = true;
+                this.label1.Visible = false;
+                this.button2.Enabled = false;
             }
-        }
-
-        
-
-        public static long FileSize(string filePath)
-        {
-            long temp = 0;
-            //判断当前路径所指向的是否为文件
-            if (File.Exists(filePath) == false)
-            {
-                string[] str1 = Directory.GetFileSystemEntries(filePath);
-                foreach (string s1 in str1)
-                {
-                    temp += FileSize(s1);
-                }
-            }
-            else
-            {
-                //定义一个FileInfo对象,使之与filePath所指向的文件向关联,
-                //以获取其大小
-                FileInfo fileInfo = new FileInfo(filePath);
-                return fileInfo.Length;
-            }
-            return temp;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -131,7 +94,7 @@ namespace WindowsFormsApplication2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Updating updating = new Updating(this.url,LocalUrl);
+            Updating updating = new Updating(this.url,LocalUrl,"files.xml");
             updating.ShowDialog();
             this.Close();
         }
@@ -142,6 +105,11 @@ namespace WindowsFormsApplication2
         }
 
         private void Detectupdate_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
