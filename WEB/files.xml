@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Books versionNum="2.0">
+  <file id="01">
+    <name>自动更细软件.exe</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\自动更新软件.exe</route>
+    <upStyle>重启覆盖</upStyle>
+    <size>37KB</size>
+  </file>
+  <file id="11">
+    <name>新建文本文档.txt</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\新建文本文档.txt</route>
+    <upStyle>新增</upStyle>
+    <size>1KB</size>
+  </file>
+  <file id="21">
+    <name>WebSite.txt</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\bin\Debug\WebSite.txt</route>
+    <upStyle>替换</upStyle>
+    <size>1KB</size>
+  </file>
+  <file id="31">
+    <name>Detect.cs</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\Detect.cs</route>
+    <upStyle>删除</upStyle>
+    <size>3KB</size>
+  </file>
+  <file id="41">
+    <name>MainForm.cs</name>
+    <route>D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2\MainForm.cs</route>
+    <upStyle>执行</upStyle>
+    <size>3KB</size>
+  </file>
+</Books>

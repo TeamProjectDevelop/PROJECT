@@ -46,8 +46,8 @@ namespace WindowsFormsApplication2
                 this.button2.Enabled = false;
                 this.timer1.Enabled = true;
                 this.label2.Visible = false;
-                this.label1.Visible = true;
                 this.label1.Text = "未检测到更新，即将自动退出";
+                this.label1.Visible = true;
             }
             else
             {

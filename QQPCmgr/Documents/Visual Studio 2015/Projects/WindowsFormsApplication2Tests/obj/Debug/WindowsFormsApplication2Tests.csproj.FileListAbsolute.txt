@@ -10,3 +10,6 @@ D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projec
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.csproj.CopyComplete
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.dll
 D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\obj\Debug\WindowsFormsApplication2Tests.pdb
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\AutoUpdate.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\netstandard.dll
+D:\softwaredesigningfiles\C#\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\WindowsFormsApplication2Tests\bin\Debug\AutoUpdate.pdb

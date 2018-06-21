@@ -37,21 +37,14 @@ namespace WindowsFormsApplication2
         private bool restart;
 
         private AutoUpdate.Update Up = new AutoUpdate.Update();
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UPDATE()
         {
             this.Up.SetLocalUrl(this.Localurl);
             this.Up.SetOnlineUrl(this.Onlineurl);
-            this.Up.SetUpdateFileName("files.xml");
-            this.Up.SetUpdateExeName("更新后软件.exe");
+            this.Up.SetUpdateFileName(this.filename);
+            this.Up.SetUpdateExeName("自动更新软件.exe");
             this.restart = Up.Readxml();
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this.progressBar1.Value==40)
