@@ -37,9 +37,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\AutoUpdate\AutoUpdate\bin\Debug\netstandard2.0\AutoUpdate.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
@@ -106,7 +103,6 @@
     <EmbeddedResource Include="Updating.resx">
       <DependentUpon>Updating.cs</DependentUpon>
     </EmbeddedResource>
-    <Fakes Include="Fakes\AutoUpdate.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,9 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="C:\Users\URHANUS\Desktop\PROJECT\QQPCmgr\Documents\Visual Studio 2015\Projects\AutoUpdate\AutoUpdate\bin\Debug\netstandard2.0\AutoUpdate.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
