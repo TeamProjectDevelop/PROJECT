@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.create = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.浏览ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置网址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.检测更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.生成版本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.versionNum = new System.Windows.Forms.TextBox();
-            this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.cms.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -65,12 +61,13 @@
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.create,
             this.打开ToolStripMenuItem,
-            this.退出ToolStripMenuItem});
+            this.保存ToolStripMenuItem,
+            this.退出ToolStripMenuItem,
+            this.退出ToolStripMenuItem1});
             this.文件ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 9F);
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.文件ToolStripMenuItem.Text = "文件[&F]";
-            this.文件ToolStripMenuItem.Click += new System.EventHandler(this.文件ToolStripMenuItem_Click);
             // 
             // create
             // 
@@ -81,16 +78,39 @@
             // 
             // 打开ToolStripMenuItem
             // 
+            this.打开ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.浏览ToolStripMenuItem});
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
             this.打开ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.打开ToolStripMenuItem.Text = "打开配置文件";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
+            // 浏览ToolStripMenuItem
+            // 
+            this.浏览ToolStripMenuItem.Name = "浏览ToolStripMenuItem";
+            this.浏览ToolStripMenuItem.Size = new System.Drawing.Size(110, 26);
+            this.浏览ToolStripMenuItem.Text = "浏览";
+            this.浏览ToolStripMenuItem.Click += new System.EventHandler(this.浏览ToolStripMenuItem_Click);
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Text = "另存为";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.另存为ToolStripMenuItem_Click);
+            // 
+            // 退出ToolStripMenuItem1
+            // 
+            this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(170, 26);
+            this.退出ToolStripMenuItem1.Text = "退出";
             // 
             // 工具ToolStripMenuItem
             // 
@@ -102,7 +122,6 @@
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
             this.工具ToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.工具ToolStripMenuItem.Text = "工具[&T]";
-            this.工具ToolStripMenuItem.Click += new System.EventHandler(this.工具ToolStripMenuItem_Click);
             // 
             // 设置网址ToolStripMenuItem
             // 
@@ -125,65 +144,17 @@
             this.生成版本ToolStripMenuItem.Text = "生成版本";
             this.生成版本ToolStripMenuItem.Click += new System.EventHandler(this.生成版本ToolStripMenuItem_Click);
             // 
-            // dgv
+            // tabControl1
             // 
-            this.dgv.AllowUserToOrderColumns = true;
-            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(131, 118);
-            this.dgv.Name = "dgv";
-            this.dgv.RowTemplate.Height = 27;
-            this.dgv.Size = new System.Drawing.Size(1015, 352);
-            this.dgv.TabIndex = 2;
-            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
-            this.dgv.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CellMouseUp);
-            this.dgv.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgv_ColumnWidthChanged);
-            this.dgv.CurrentCellChanged += new System.EventHandler(this.dgv_CurrentCellChanged);
-            this.dgv.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
-            this.dgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_RowPostPaint);
-            this.dgv.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgv_Scroll);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 13.8F);
-            this.label1.Location = new System.Drawing.Point(127, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "版本号:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // versionNum
-            // 
-            this.versionNum.Font = new System.Drawing.Font("宋体", 13.8F);
-            this.versionNum.Location = new System.Drawing.Point(245, 78);
-            this.versionNum.Name = "versionNum";
-            this.versionNum.Size = new System.Drawing.Size(187, 34);
-            this.versionNum.TabIndex = 4;
-            this.versionNum.Tag = "";
-            this.versionNum.TextChanged += new System.EventHandler(this.versionNum_TextChanged);
-            // 
-            // cms
-            // 
-            this.cms.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除ToolStripMenuItem});
-            this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(109, 28);
-            // 
-            // 删除ToolStripMenuItem
-            // 
-            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
-            this.删除ToolStripMenuItem.Text = "删除";
-            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(10, 5);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1261, 531);
+            this.tabControl1.TabIndex = 1;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem_1);
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
             // MainForm
             // 
@@ -191,19 +162,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1261, 556);
-            this.Controls.Add(this.versionNum);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.cms.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,12 +185,11 @@
         private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置网址ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 检测更新ToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ToolStripMenuItem 生成版本ToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox versionNum;
-        private System.Windows.Forms.ContextMenuStrip cms;
-        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 浏览ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem1;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 
